@@ -1,0 +1,41 @@
+﻿<Page x:Class="PaperFactory.Pages.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PaperFactory.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Main">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="search"/>
+            <ComboBox Name="materialType" Grid.Column="1"/>
+            <ComboBox Name="quantity" Grid.Column="2" DisplayMemberPath="Name" SelectionChanged="quantity_SelectionChanged" SelectedIndex="0"/>
+        </Grid>
+        <ScrollViewer Grid.Row="1">
+            <StackPanel x:Name="panel">
+
+            </StackPanel>
+        </ScrollViewer>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="back" Content="Назад" Click="back_Click"/>
+            <Button x:Name="next" Content="Вперёд" Grid.Column="3" Click="next_Click" />
+        </Grid>
+    </Grid>
+</Page>
